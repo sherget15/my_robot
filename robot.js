@@ -19,13 +19,28 @@ class Robot {
             this.vy *= 0.9
             this.y += this.vy
         }
+
         if (this.y < 0 + this.height) {
             this.y = 0 + this.height
             this.vy = 0
         }
 
+        if (spacePressed && this.y > this.height * 3) this.flap()
+
     }
 
 
-    
+    draw() {
+        ctx.fillStyle = 'red'
+        ctx.fillRect(this.x, this.y, this.width, this.height)
+    }
+
+
+    flap() {
+        this.vy -= 2
+    }
+
+
 }
+
+const robot = new Robot()
