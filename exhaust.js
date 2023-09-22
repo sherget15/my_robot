@@ -5,9 +5,9 @@ class Exhaust {
         // set coordinates of exhaust particles to orignate from robot's location
         this.x = robot.x
         this.y = robot.y
-        this.size = Math.random() * 7 + 3;
+        this.size = Math.random() * 7 + 3
         this.speedY = (Math.random() * 1) - 0.5
-        this.color = `hsla('hue', 100%, 50%, 0.8)`
+        this.color = 'hsla(' + hue + ', 100%, 50%, 0.8)'
     }
 
 
@@ -21,14 +21,14 @@ class Exhaust {
         ctx.fillstyle = this.color
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-        ctx.fill
+        ctx.fill()
     }
 }
 
 function handleExhaust() {
     exhaustArr.unshift(new Exhaust)
     // 'let' in below for-loop not used in tutorial...
-    for (let i = 0; i < exhaustArr.length; i++) {
+    for (i = 0; i < exhaustArr.length; i++) {
         exhaustArr[i].update()
         exhaustArr[i].draw()
     }
