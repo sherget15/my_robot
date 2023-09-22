@@ -27,6 +27,7 @@ class Exhaust {
 
 function handleExhaust() {
     exhaustArr.unshift(new Exhaust)
+    // 'let' in below for-loop not used in tutorial...
     for (let i = 0; i < exhaustArr.length; i++) {
         exhaustArr[i].update()
         exhaustArr[i].draw()
