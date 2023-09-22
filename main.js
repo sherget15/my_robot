@@ -27,6 +27,7 @@ function animate() {
     robot.update()
     // draw will draw rectangle at new coordinates
     robot.draw()
+    handleExhaust()
     requestAnimationFrame(animate)
     // multiplying by 0.12 slows down player-character's bounce speed 
     angle += 0.12
