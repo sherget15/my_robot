@@ -19,6 +19,8 @@ let gamespeed = 2
 function animate() {
     // call 'clearRect' to clear entire canvas between every frame of animation
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    handleObstacles()
+    handleExhaust()
 
     // use 'fillRect' to show rectangle as placeholder for the player character
     // ctx.fillRect(10, canvas.height - 90, 50, 50)
@@ -27,8 +29,6 @@ function animate() {
     robot.update()
     // draw will draw rectangle at new coordinates
     robot.draw()
-    handleObstacles()
-    handleExhaust()
     requestAnimationFrame(animate)
     // multiplying by 0.12 slows down player-character's bounce speed 
     angle += 0.12
