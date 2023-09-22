@@ -11,5 +11,34 @@ class Exhaust {
     }
 
 
-    
+    update() {
+        this.x -= gamespeed
+        this.y += this.speedY
+    }
+
+
+    draw() {
+        ctx.fillstyle = this.color
+        ctx.beginPath()
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        ctx.fill
+    }
 }
+
+function handleExhaust() {
+    exhaustArr.unshift(new Exhaust)
+    for (i = 0; i < exhaustArr.length; I++) {
+        exhaustArr[i].update()
+        exhaustArr[i].draw()
+    }
+
+    //if more than 200, remove 20
+    if (exhaustArr.length > 200) {
+        for (let i = 0; i < 20; i++) {
+            exhaustArr.pop(exhaustArr[i])
+        }
+    }
+
+
+}
+
