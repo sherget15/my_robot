@@ -27,7 +27,7 @@ class Exhaust {
 
 function handleExhaust() {
     exhaustArr.unshift(new Exhaust)
-    for (i = 0; i < exhaustArr.length; I++) {
+    for (let i = 0; i < exhaustArr.length; i++) {
         exhaustArr[i].update()
         exhaustArr[i].draw()
     }
