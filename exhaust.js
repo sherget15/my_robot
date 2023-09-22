@@ -7,7 +7,7 @@ class Exhaust {
         this.y = robot.y
         this.size = Math.random() * 7 + 3;
         this.speedY = (Math.random() * 1) - 0.5
-        this.color = 'red'
+        this.color = `hsla('hue', 100%, 50%, 0.8)`
     }
 
 
