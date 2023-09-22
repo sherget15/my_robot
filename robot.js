@@ -1,13 +1,17 @@
 class Robot {
+    // constructor function holds blueprints for the <class Robot>
     constructor() {
         this.x = 150
         this.y = 200
+        // vy = velocity & y-coordinate (this determines speed that Robot moves up & down)
         this.vy = 0 
         this.width = 20
         this.height = 20
+        // weight - determins amount of force pulling down on Robot
         this.weight = 1
     }
 
+    // using update method to calculate position & speed of player character (robot) for each frame of animation 
     update() {
         let curve = Math.sin(angle) * 20
 
@@ -30,6 +34,7 @@ class Robot {
     }
 
 
+    // draw method to show player character on screen (using rectangle as placeholder) 
     draw() {
         ctx.fillStyle = 'red'
         ctx.fillRect(this.x, this.y, this.width, this.height)
