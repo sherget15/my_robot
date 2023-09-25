@@ -19,15 +19,7 @@ class Obstacle {
 
 
     update() {
-        this.x -= gamespeed
-
-
-        if (!this.counted && this.x < robot.x) {
-            score++
-            this.counted = true 
-        }
-
-        
+        this.x -= gamespeed 
         this.draw()
     }
 
