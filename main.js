@@ -15,6 +15,7 @@ let score = 0
 // gamespeed needs to be global variable so that we can make all elements move at same speed
 let gamespeed = 2
 
+// gradient for game score shown on screen
 const gradient = ctx.createLinearGradient(0, 0, 0, 70)
 gradient.addColorStop('0.4', '#fff')
 gradient.addColorStop('0.5', '#000')
