@@ -29,10 +29,17 @@ function animate() {
     robot.update()
     // draw will draw rectangle at new coordinates
     robot.draw()
+
+
+    handleCollisions()
+    if (handleCollisions()) return;
+
     requestAnimationFrame(animate)
+
     // multiplying by 0.12 slows down player-character's bounce speed 
     angle += 0.12
     hue++
+    frame++
 }
 animate()
 
@@ -46,4 +53,20 @@ window.addEventListener('keydown', function(e) {
 window.addEventListener('keyup', function(e) {
     if (e.code === 'Space') spacePressed = false
 })
+
+
+const bang = new Image()
+bang.src = 'bang.png'
+
+
+
+function handleCollisions() {
+    for (let i = 0; i < obstaclesArr.length; i++) {
+        if (robot.x < obstaclesArr[i].x + obstaclesArr[i].width && robot.x + robot.width > obstaclesArr[i].x && ((robot.y < 0 + obstaclesArr[i].top && robot.y + robot.height > 0) || (robot.y > canvas.height - obstaclesArr[i].bottom && robot.y + robot.height < canvas.height))) {
+            // collision detected
+            ctx.drawImage(bang, robot.x, robot.y, 50, 50)
+            return true
+        }
+    }
+}
 
