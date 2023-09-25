@@ -2,7 +2,6 @@ const exhaustArr = []
 
 class Exhaust {
     constructor() {
-        // set coordinates of exhaust particles to orignate from robot's location
         this.x = robot.x
         this.y = robot.y
         this.size = Math.random() * 7 + 3
@@ -28,7 +27,6 @@ class Exhaust {
 
 function handleExhaust() {
     exhaustArr.unshift(new Exhaust)
-    // 'let' in below for-loop not used in tutorial...
     for (i = 0; i < exhaustArr.length; i++) {
         exhaustArr[i].update()
         exhaustArr[i].draw()
