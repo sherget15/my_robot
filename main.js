@@ -15,28 +15,17 @@ let score = 0
 // gamespeed needs to be global variable so that we can make all elements move at same speed
 let gamespeed = 2
 
-// gradient for game score shown on screen
-// const gradient = ctx.createLinearGradient(0, 0, 0, 70)
-// gradient.addColorStop('0.4', '#fff')
-// gradient.addColorStop('0.5', '#000')
-// gradient.addColorStop('0.55', '#4040ff')
-// gradient.addColorStop('0.6', '#000')
-// gradient.addColorStop('0.9', '#fff')
-
 
 function animate() {
     // call 'clearRect' to clear entire canvas between every frame of animation
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     handleObstacles()
     handleExhaust()
+    
     // update will calculate player position, speed, & draw 
     robot.update()
     // draw will draw rectangle at new coordinates
     robot.draw()
-    // ctx.fillStyle = gradient 
-    // ctx.font = '90px Georgia'
-    // ctx.strokeText(score, 450, 70)
-    // ctx.fillText(score, 450, 70)
 
 
     handleCollisions()
@@ -72,11 +61,7 @@ function handleCollisions() {
     for (let i = 0; i < obstaclesArr.length; i++) {
         if (robot.x < obstaclesArr[i].x + obstaclesArr[i].width && robot.x + robot.width > obstaclesArr[i].x && ((robot.y < 0 + obstaclesArr[i].top && robot.y + robot.height > 0) || (robot.y > canvas.height - obstaclesArr[i].bottom && robot.y + robot.height < canvas.height))) {
             // collision detected
-            // ctx.drawImage(bang, robot.x, robot.y, 50, 50)
-            // ctx.drawImage(bang, robot.x, robot.y, 50, 50)
-            // ctx.font = '25px Georgia'
-            // ctx.fillStyle = 'black'
-            // ctx.fillText('Game Over, your score is ' + score, 160, canvas.height / 2 - 10)
+            ctx.drawImage(bang, robot.x, robot.y, 50, 50)
             return true
         }
     }
