@@ -7,6 +7,7 @@ class Obstacle {
         this.x = canvas.width 
         this.width = 20
         this.color = 'hsla(' + hue + ', 100%, 50%, 1)'
+        this.counted = false 
     }
 
     
@@ -19,6 +20,14 @@ class Obstacle {
 
     update() {
         this.x -= gamespeed
+
+
+        if (!this.counted && this.x < robot.x) {
+            score++
+            this.counted = true 
+        }
+
+        
         this.draw()
     }
 
