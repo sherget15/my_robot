@@ -29,10 +29,6 @@ function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     handleObstacles()
     handleExhaust()
-
-    // use 'fillRect' to show rectangle as placeholder for the player character
-    // ctx.fillRect(10, canvas.height - 90, 50, 50)
-
     // update will calculate player position, speed, & draw 
     robot.update()
     // draw will draw rectangle at new coordinates
