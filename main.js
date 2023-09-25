@@ -65,6 +65,10 @@ function handleCollisions() {
         if (robot.x < obstaclesArr[i].x + obstaclesArr[i].width && robot.x + robot.width > obstaclesArr[i].x && ((robot.y < 0 + obstaclesArr[i].top && robot.y + robot.height > 0) || (robot.y > canvas.height - obstaclesArr[i].bottom && robot.y + robot.height < canvas.height))) {
             // collision detected
             ctx.drawImage(bang, robot.x, robot.y, 50, 50)
+            ctx.drawImage(bang, robot.x, robot.y, 50, 50)
+            ctx.font = '25px Georgia'
+            ctx.fillStyle = 'black'
+            ctx.fillText('Game Over, your score is ' + score, 160, canvas.height / 2 - 10)
             return true
         }
     }
