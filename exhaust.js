@@ -6,7 +6,7 @@ class Exhaust {
         this.y = robot.y
         this.size = Math.random() * 7 + 3
         this.speedY = (Math.random() * 1) - 0.5
-        this.color = 'hsla(' + hue + ', 100%, 50%, 0.8)'
+        this.color = 'hsla(' + hue + ', 100%, 50%, 1)'
     }
 
 
@@ -17,10 +17,10 @@ class Exhaust {
 
 
     draw() {
-        ctx.fillstyle = this.color
+        ctx.fillStyle = this.color
+        ctx.fill()
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-        ctx.fill()
     }
 }
 
