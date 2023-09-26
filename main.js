@@ -16,9 +16,31 @@ let score = 0
 let gamespeed = 2
 
 
+const background = new Image()
+background.src = 'space.png'
+const BG = {
+    x1: 0,
+    x2: canvas.width,
+    y: 0,
+    width: canvas.width,
+    height: canvas.height
+}
+
+
+function handleBackground() {
+    if (BG.x1 <= -BG.width + gamespeed) BG.x1 = BG.width
+    else BG.x1 -= gamespeed
+    if (BG.x2 <= -BG.width + gamespeed) BG.x2 = BG.width
+    else BG.x2 -= gamespeed
+    ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height)
+    ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height)
+}
+
+
 function animate() {
     // call 'clearRect' to clear entire canvas between every frame of animation
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    handleBackground()
     handleObstacles()
     handleExhaust()
     
@@ -74,4 +96,9 @@ function handleCollisions() {
         }
     }
 }
+
+
+
+
+
 

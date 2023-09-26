@@ -1,5 +1,5 @@
-// const robot = new Image()
-// robot.src = 'ufo.png'
+const ufo = new Image()
+ufo.src = 'ufo.png'
 
 class Robot {
     // constructor function holds blueprints for the <class Robot>
@@ -8,8 +8,10 @@ class Robot {
         this.y = 200
         // vy = velocity & y-coordinate (this determines speed that Robot moves up & down)
         this.vy = 0 
-        this.width = 20
-        this.height = 20
+        this.originalWidth = 1902
+        this.originalHeight = 1604
+        this.width = this.originalWidth / 40
+        this.height = this.originalHeight / 40
         // weight - determins amount of force pulling down on Robot
         this.weight = 1
     }
@@ -51,7 +53,8 @@ class Robot {
     // draw method to show player character on screen (using rectangle as placeholder) 
     draw() {
         ctx.fillStyle = 'red'
-        ctx.fillRect(this.x, this.y, this.width, this.height)
+        // ctx.fillRect(this.x, this.y, this.width, this.height)
+        ctx.drawImage(ufo, 0, 0, this.originalWidth, this.originalHeight, this.x - 20, this.y - 12, this.width, this.height)
     }
 
 
