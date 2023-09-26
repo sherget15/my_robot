@@ -1,3 +1,6 @@
+// const robot = new Image()
+// robot.src = 'ufo.png'
+
 class Robot {
     // constructor function holds blueprints for the <class Robot>
     constructor() {

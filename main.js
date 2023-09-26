@@ -68,7 +68,7 @@ function handleCollisions() {
             // collision detected
             ctx.drawImage(bang, robot.x, robot.y, 50, 50)
             ctx.font = '25px Georgia'
-            ctx.fillStyle = 'black'
+            ctx.fillStyle = 'red'
             ctx.fillText('Game Over, your score is ' + score, 160, canvas.height / 2 - 10)
             return true
         }
